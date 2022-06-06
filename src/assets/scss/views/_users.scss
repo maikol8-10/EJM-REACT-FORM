@@ -1,0 +1,15 @@
+@use 'base/variables'as v;
+@use 'base/mixins'as m;
+
+
+.content-sub-permissions {
+    display: none;
+}
+
+.format-id {
+    position: absolute;
+    top: -18px;
+    right: 0;
+    color: v.$verdeMedio;
+    font-size: 14px;
+}

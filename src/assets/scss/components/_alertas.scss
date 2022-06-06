@@ -1,0 +1,43 @@
+@use 'base/variables'as v;
+
+
+.alert-senara {
+    padding: 1.5rem 1rem 1.5rem 2rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.4rem;
+    //margin-bottom: 1rem;
+    font-size: 1.4rem;
+    //max-width: 80rem;
+    //max-width: 100%;
+    width: 100%;
+    right: 0;
+    text-align: center;
+    transform: translateX(-50%);
+    transition: 1s all;
+    opacity: 0;
+    pointer-events: none;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: -10%;
+    z-index: 999999;
+    left: 50%;
+
+    &.error {
+        background-color: lighten(v.$rojo, 50%);
+        border-left: .5rem solid v.$rojo;
+        border-right: .5rem solid v.$rojo;
+        color: v.$rojo;
+        opacity: 1;
+        bottom: 0%;
+    }
+
+    &.success {
+        background-color: lighten(v.$verde, 50%);
+        border-left: .5rem solid v.$verde;
+        border-right: .5rem solid v.$verde;
+        color: darken(v.$verde, 20%);
+        opacity: 1;
+        bottom: 0%;
+    }
+}

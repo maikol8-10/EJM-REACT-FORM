@@ -1,0 +1,38 @@
+@use 'variables' as v;
+
+h1, h2, h3 {
+    font-family: v.$fuente_headings;
+    margin: 0 0 calc(v.$separacion / 2) 0 ;
+    font-weight: 900;
+}
+h1 {
+    font-size: 6rem;
+}
+h2 {
+    font-size: 5rem;
+}
+h3 {
+    font-size: 4rem;
+}
+p {
+    font-size: 2rem;
+    color: v.$grisOscuro;
+    line-height: 1.8;
+}
+
+
+.senara-tagline {
+    font-family: v.$fuente_headings;
+    font-weight: 600;
+    color: v.$verdeOscuro !important;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.senara-description-page {
+    text-align: center;
+    padding: 2rem 0;
+    margin: 0; 
+    color: v.$verdeOscuro !important; 
+}

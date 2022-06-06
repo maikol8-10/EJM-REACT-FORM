@@ -1,0 +1,247 @@
+@use 'variables'as v;
+@use 'base/mixins'as m;
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  font-family: v.$fuente_textos;
+  font-size: 1.6rem;
+  min-height: 100%;
+
+  *::-webkit-scrollbar {
+    width: 7px;
+    height: 9px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: v.$grisOscuro;
+    border-radius: v.$radiusContenedor;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: v.$verdeClaro;
+    border-radius: v.$radiusContenedor;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.senara-btn-primary {
+  @include m.boton(v.$azulOscuro, v.$grisClaro);
+}
+
+.max-c {
+  width: max-content !important;
+}
+
+.btn-10rem {
+  width: 10rem !important;
+}
+
+.senara-btn-primary .btn-right {
+  align-self: right;
+}
+
+.senara-btn-primary .btn-left {
+  align-self: left;
+
+}
+
+.senara-btn-primary .btn-center {
+  align-self: center;
+
+}
+
+.senara-form-group {
+  position: relative;
+  margin-bottom: 2.5rem;
+
+  >i {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    color: v.$verdeOscuro;
+  }
+}
+
+.senara-form-group.senara-form-group-search {
+  margin-left: auto;
+}
+
+
+/****  floating-Lable style start ****/
+.floating-label {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.floating-input,
+.floating-select {
+  font-size: 1.5rem;
+  padding: 4px 4px;
+  display: block;
+  width: 100%;
+  height: 30px;
+  background-color: transparent;
+  //border: none;
+  //border-bottom: 1px solid #757575;
+  border: 1px solid lighten(v.$grisOscuro, 30%);
+  //border-radius: 20px 20px 20px 20px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+.floating-input:focus,
+.floating-select:focus {
+  outline: none;
+  border: 1px solid v.$azulOscuro;
+}
+
+label {
+  color: #999;
+  font-size: 1.5rem;
+  //font-weight: 600;
+  position: absolute;
+  pointer-events: none;
+  left: 6px;
+  top: 6px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.floating-input {
+
+  &:focus~label,
+  &:not(:placeholder-shown)~label {
+    top: -18px;
+    font-size: 14px;
+    color: v.$azulOscuro;
+  }
+}
+
+.floating-select {
+
+  &:focus~label,
+  &:not([value=""]):valid~label {
+    top: -18px;
+    font-size: 14px;
+    color: v.$azulOscuro;
+  }
+}
+
+/* active state */
+
+.floating-input:focus~.bar {
+
+  &:before,
+  &:after {
+    width: 50%;
+  }
+}
+
+.floating-select:focus~.bar {
+
+  &:before,
+  &:after {
+    width: 50%;
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  &:before,
+  &:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+.floating-textarea {
+  min-height: 30px;
+  max-height: 260px;
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+/* highlighter */
+
+.highlight {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  top: 15%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+
+.floating-input:focus~.highlight,
+.floating-select:focus~.highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* animation */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: v.$azulOscuro;
+  }
+
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+@-moz-keyframes inputHighlighter {
+  from {
+    background: v.$azulOscuro;
+  }
+
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+@keyframes inputHighlighter {
+  from {
+    background: v.$azulOscuro;
+  }
+
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+.validate-input {
+  border: 0.1rem solid lighten(v.$rojo, 10%);
+}

@@ -1,0 +1,113 @@
+@use 'base/variables'as v;
+@use 'base/mixins'as m;
+
+
+.senara-content-menu {
+    background-color: darken(v.$azulClaro, 25%);
+    //background-color: v.$azulOscuro;
+    padding: 20px 0;
+    overflow-x: auto;
+
+    @include m.tablet {
+        width: calc(100% - 80%);
+    }
+
+    h2 {
+        color: v.$blanco;
+        margin: 0;
+        text-align: center;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .senara-menu {
+        margin-top: 2rem;
+
+        .header-ul {
+            padding: 1rem;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            background-color: darken(v.$azulClaro, 25%);
+            color: v.$gris;
+        }
+
+        >ul {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+
+            >li {
+                list-style: none;
+
+                >a {
+                    color: v.$grisClaro;
+
+                    &:hover,
+                    &.active {
+                        color: v.$blanco;
+                        background-color: darken(v.$azulOscuro, 20%);
+                        border-left: .5rem solid v.$verdeClaro;
+                        padding: 1.5rem 2.5rem;
+                        //border-radius: .5rem;
+                    }
+
+                }
+
+                >ul {
+                    display: none;
+                    text-align: center;
+                    background-color: darken(v.$azulClaro, 20%);
+
+                    >li {
+                        list-style: none;
+
+                        >a {
+                            //color: lighten(v.$gris, 25%);
+                            color: v.$blanco;
+
+                            &:hover,
+                            &.active {
+                                color: lighten(v.$verdeClaro, 20%);
+                                //background-color: darken(v.$azulOscuro, 20%);
+                                padding: 1.5rem 3rem;
+                                //border-left: 1px solid v.$verdeClaro;
+                                //border-radius: .5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    a {
+        display: block;
+        padding: 1.5rem 3rem;
+        transition-property: background-color;
+        transition-duration: 300ms;
+        //text-transform: uppercase;
+        //font-weight: bold;
+        font-size: 2.4rem;
+        margin-bottom: 0 !important;
+        text-align: center;
+
+        >span {
+            padding-left: 0.7rem;
+        }
+
+        >i:last-child {
+            float: right;
+        }
+
+        @include m.tablet {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+    }
+
+}

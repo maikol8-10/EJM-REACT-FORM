@@ -1,0 +1,57 @@
+@use 'base/variables'as v;
+@use 'base/mixins'as m;
+
+.senara-dashboard {
+    background-color: v.$grisClaro;
+    overflow: hidden;
+
+    @include m.tablet {
+        display: flex;
+        height: 100vh;
+    }
+
+    .senara-content-principal {
+        flex: 1;
+    }
+
+    .senara-content {
+        padding: 0 2rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .senara-page-name {
+        font-size: 3rem;
+        text-align: left;
+        color: v.$verdeClaro;
+        margin: 0;
+        padding: 1rem 2rem 0 2rem;
+    }
+
+    .container-sm {
+        height: 86%;
+        width: 100%;
+        overflow-y: scroll;
+        padding: 0 2rem;
+        align-self: flex-start;
+
+        &::-webkit-scrollbar {
+            display: none;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    }
+}
+
+.container-notfound {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    >i {
+        font-size: 10rem;
+        color: darken(v.$azulClaro, 25%);
+    }
+}

@@ -1,0 +1,63 @@
+@use 'base/variables'as v;
+@use 'base/mixins'as m;
+
+.senara-content-login {
+    position: relative;
+    height: 100vh;
+    padding: 2rem;
+    display: flex;
+
+    //height: 95vh;
+    //max-width: 1200px;
+    //margin: 0 auto;
+}
+
+.senara-content-sm-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50rem;
+    margin: auto;
+    padding: 2rem;
+    height: 58rem;
+    border: 1px solid rgba(85, 91, 82, 0.44);
+
+    @include m.desktop {
+        height: 55rem;
+    }
+}
+
+.senara-logo {
+    margin: 0 auto;
+    width: 20rem;
+    height: 10rem;
+    display: flex;
+
+    .senara-img-logo {
+        width: 100%;
+        background-image: url('../img/logo.png');
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+.senara-footer-decoration {
+    width: 10rem;
+    height: 20rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: none;
+
+    .decoration-logo {
+        width: 100%;
+        height: 100%;
+        background: url('../img/adorno_footer.jpg') no-repeat bottom right transparent;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    @include m.desktop {
+        display: block;
+    }
+}

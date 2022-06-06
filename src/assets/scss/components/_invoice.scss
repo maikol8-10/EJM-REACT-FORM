@@ -1,0 +1,13 @@
+@use 'base/variables'as v;
+@use 'base/mixins'as m;
+
+#senara-invoice {
+    width: 100%;
+    >tbody {
+        >tr {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+        }
+    }
+}
